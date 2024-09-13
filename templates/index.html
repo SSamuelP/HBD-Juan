@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha Especial</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        /* Estilos de la cuadrícula */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columna mínima de 200px */
+            gap: 10px; /* Espacio entre las fotos */
+            padding: 10px;
+            grid-auto-rows: auto; /* Ajusta las filas automáticamente según el contenido */
+        }
+        .grid-item {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .grid-item img {
+            width: 100%;
+            height: auto; /* Ajusta la altura automáticamente */
+            display: block;
+        }
+        /* Ocultar el contenedor de imágenes y el audio al principio */
+        #imagenes, #audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ingresa una fecha</h1>
+    
+    <input type="date" id="fecha" />
+    <button onclick="verificarFecha()">Verificar</button>
+
+    <!-- Contenedor de las imágenes -->
+    <div id="imagenes">
+        <h2>¡Feliz Cumpleaños Juan!</h2>
+        <div class="grid-container">
+            <!-- Imágenes organizadas en la cuadrícula -->
+            <div class="grid-item">
+                <img src="/static/imagenes/juan1.jpg" alt="Juan 1">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan2.jpg" alt="Juan 2">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan3.jpg" alt="Juan 3">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan4.jpg" alt="Juan 4">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan5.jpg" alt="Juan 5">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan6.jpg" alt="Juan 6">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan7.jpg" alt="Juan 7">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan8.jpg" alt="Juan 8">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan9.jpg" alt="Juan 9">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan10.jpg" alt="Juan 10">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan11.jpg" alt="Juan 11">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan12.jpg" alt="Juan 12">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan13.jpg" alt="Juan 13">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan14.jpg" alt="Juan 14">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan15.jpg" alt="Juan 15">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan16.jpg" alt="Juan 16">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan17.jpg" alt="Juan 17">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan18.jpg" alt="Juan 18">
+            </div>
+        </div>
+    </div>
+
+    <!-- Reproductor de audio -->
+    <audio id="audio" controls>
+        <source src="/static/music/feliz_cumpleaños.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script>
+        function verificarFecha() {
+            // Obtener la fecha ingresada
+            var fecha = document.getElementById('fecha').value;
+            
+            // Formatear la fecha para que coincida con el formato esperado
+            var fechaObjetivo = '2003-09-09';
+
+            // Comparar con el 9 de septiembre de 2003
+            if (fecha === fechaObjetivo) {
+                // Mostrar las imágenes y el audio
+                document.getElementById('imagenes').style.display = 'block';
+                var audio = document.getElementById('audio');
+                audio.style.display = 'block';
+                audio.play();
+            } else {
+                // Si la fecha no coincide, ocultar todo
+                document.getElementById('imagenes').style.display = 'none';
+                var audio = document.getElementById('audio');
+                audio.style.display = 'none';
+                audio.pause();
+                audio.currentTime = 0; // Reiniciar el audio
+            }
+        }
+    </script>
+
+</body>
+</html>
