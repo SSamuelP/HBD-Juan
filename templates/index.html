@@ -28,6 +28,11 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out; /* Efecto suave al expandir */
+        }
+        /* Efecto hover: expande la imagen cuando el cursor esté sobre ella */
+        .grid-item:hover {
+            transform: scale(1.1); /* Expande la imagen en un 10% */
         }
         .grid-item img {
             width: 100%;
@@ -45,17 +50,17 @@
     
     <input type="date" id="fecha" />
     <button onclick="verificarFecha()">Verificar</button>
-
+    
     <!-- Contenedor de las imágenes -->
     <div id="imagenes">
         <h2>¡Feliz Cumpleaños Juan!</h2>
         <div class="grid-container">
             <!-- Imágenes organizadas en la cuadrícula -->
             <div class="grid-item">
-                <img src="/static/imagenes/juan1.jpg" alt="Juan 1">
+                <img src="/static/imagenes/juan15.jpg" alt="Juan 15">
             </div>
             <div class="grid-item">
-                <img src="/static/imagenes/juan2.jpg" alt="Juan 2">
+                <img src="/static/imagenes/juan16.jpg" alt="Juan 16">
             </div>
             <div class="grid-item">
                 <img src="/static/imagenes/juan3.jpg" alt="Juan 3">
@@ -94,16 +99,16 @@
                 <img src="/static/imagenes/juan14.jpg" alt="Juan 14">
             </div>
             <div class="grid-item">
-                <img src="/static/imagenes/juan15.jpg" alt="Juan 15">
-            </div>
-            <div class="grid-item">
-                <img src="/static/imagenes/juan16.jpg" alt="Juan 16">
-            </div>
-            <div class="grid-item">
                 <img src="/static/imagenes/juan17.jpg" alt="Juan 17">
             </div>
             <div class="grid-item">
                 <img src="/static/imagenes/juan18.jpg" alt="Juan 18">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan1.jpg" alt="Juan 1">
+            </div>
+            <div class="grid-item">
+                <img src="/static/imagenes/juan2.jpg" alt="Juan 2">
             </div>
         </div>
     </div>
